@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const lickExample = () => {
+const ClickExample = () => {
     const [value, setValue] = useState('My name ')
 
 
