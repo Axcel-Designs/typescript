@@ -1,7 +1,11 @@
-import React from 'react'
 
 export default function Footer() {
   return (
-    <div>Footer</div>
+   <footer className='text-white bg-black p-4'>
+    <section></section>
+    <section className='text-center'>
+              <h5>&copy; copyright {new Date().getFullYear()}. All rights reversed</h5>
+    </section>
+   </footer>
   )
 }
