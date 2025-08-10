@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-
+import Loading from '../component/loading'
 interface Data {
   id: string,
   avatar: string,
@@ -18,25 +18,35 @@ export default function Blog() {
         method: 'GET',
         headers: { 'content-type': 'application/json' },
       })
-      const data: Data[] = await res.json
+      const data: Data[] = await res.json()
       setPosts(data)
     } catch (error) {
       setErr(error instanceof Error ? error.message : String(error));
       console.log(error)
     } finally {
       setLoading(false)
-    } 
-  }
-  useEffect(()=>{
-    getData()
-  },[])
-  return (
-    <>{
-      posts.map((item, i) => (
-        <li key={i}>{item.title}</li>
-      ))
     }
-      kk
+  }
+  useEffect(() => {
+    getData();
+  }, [])
+
+  if (loading) return <><Loading /></>
+  if (err) return <p>{err}</p>;
+  return (
+    <>
+      <main className='min-h-100 p-4'>
+        <ul className='flex flex-wrap gap-3 justify-around items-center'>
+          {posts.map((item, i) => (
+            <li key={i} className='w-50'>
+              <div><div><img src={item.avatar} /></div>
+              <h4>{item.title}</h4>
+              </div>
+            </li>
+          ))
+          }
+        </ul>
+      </main>
     </>
   )
 }
