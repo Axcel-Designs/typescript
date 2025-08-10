@@ -39,10 +39,11 @@ export default function Blog() {
       <main className='min-h-100 p-4'>
         <ul className='flex flex-wrap gap-3 justify-around items-center'>
           {posts.map((item) => (
-            <li key={item.id} className='w-50'>
-              <div><div><img src={item.avatar} /></div>
-              <h4>{item.name}</h4>
-              <p>{item.title}</p>
+            <li key={item.id} className='w-50 flex flex-col justify-around items-center'>
+              <div className='bg-gray-400 w-full'><img src={item.avatar} className='w-30 h-30 m-auto' /></div>
+              <div>
+                <h4>{item.name}</h4>
+                <p>{item.title}</p>
               </div>
             </li>
           ))
