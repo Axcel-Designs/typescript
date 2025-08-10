@@ -4,6 +4,7 @@ interface Data {
   id: string,
   avatar: string,
   title: string,
+  name: string,
   createdAt: string,
 }
 
@@ -37,10 +38,11 @@ export default function Blog() {
     <>
       <main className='min-h-100 p-4'>
         <ul className='flex flex-wrap gap-3 justify-around items-center'>
-          {posts.map((item, i) => (
-            <li key={i} className='w-50'>
+          {posts.map((item) => (
+            <li key={item.id} className='w-50'>
               <div><div><img src={item.avatar} /></div>
-              <h4>{item.title}</h4>
+              <h4>{item.name}</h4>
+              <p>{item.title}</p>
               </div>
             </li>
           ))
