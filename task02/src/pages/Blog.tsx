@@ -15,8 +15,7 @@ export default function Blog() {
 
   async function getData() {
     try {
-      // const res = await fetch(`https://${import.meta.env.PROJECT_kEY}.mockapi.io/post`, {
-      const res = await fetch(`${import.meta.env.PROJECT_kEY}`, {
+      const res = await fetch(import.meta.env.VITE_PROJECT, {
         method: 'GET',
         headers: { 'content-type': 'application/json' },
       })
