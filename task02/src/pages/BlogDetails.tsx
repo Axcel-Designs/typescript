@@ -6,7 +6,7 @@ import Loading from "../component/loading";
 export default function BlogDetails() {
 	const params = useParams()
 	const id = params.id
-	const [data, setData] = useState<BlogPost | null>()
+	const [data, setData] = useState<BlogPost | null>(null)
 	const [loading, setLoading] = useState<boolean>(true)
 	const [err, setErr] = useState<string>('')
 
