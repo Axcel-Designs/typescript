@@ -19,7 +19,8 @@ export default function Header() {
     if (menu.path === '/' && location.pathname === '/') return true;
     return location.pathname.replace(/^\//, '') === menu.path;
   });
-  const pageTitle = current ? current.label : 'Page';
+  const pageTitle = current ? current.label : 'Details';
+  // const pageTitle = current && current.label 
 
   return (
     <>
@@ -40,7 +41,7 @@ export default function Header() {
           <>
             <h2>{pageTitle}</h2>
             <div className='flex'>
-              <p>Home <em className='font-semibold'>|{' '}{pageTitle.toLowerCase()}</em></p>
+              <p>Home <em className='font-semibold'>|{' '}{pageTitle}</em></p>
             </div>
           </>
         </div>
