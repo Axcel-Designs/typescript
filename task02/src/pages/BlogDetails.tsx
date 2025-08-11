@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import type { BlogPost } from '../types/blogPosts'
 import Loading from "../component/loading";
 
-
 export default function BlogDetails() {
 	const params = useParams()
 	const id = params.id
@@ -38,7 +37,9 @@ export default function BlogDetails() {
 			<main className='min-h-125'>
 				<section className='my-4 p-4'>
 					<div className='flex justify-between items-center mb-2'>
-						<div>{data.name}</div>
+						<div>
+							<h2>Post</h2>
+						</div>
 						<NavLink to={'/blog'}><button className='border-2 py-1 px-4 hover:bg-gray-300'>Go Back</button></NavLink>
 					</div>
 					<div className="flex flex-wrap gap-3 justify-around items-center">
