@@ -6,8 +6,8 @@ type ModalProps = PropsWithChildren<{
 }>;
 
 export default function Modal({ children, isVisible, onClose }: ModalProps) {
-  function closeModal (e){
-    if (e.target.id === 'modalSec') { onClose() }
+  function closeModal(e: React.MouseEvent<HTMLElement>) {
+    if ((e.target as HTMLElement).id === "modalSec") onClose();
   }
   if (!isVisible) return null;
   return (
