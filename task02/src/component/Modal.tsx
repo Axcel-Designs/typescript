@@ -1,9 +1,11 @@
 import type { PropsWithChildren } from "react";
-interface Props {
-  isVisible: boolean; onClose: () => void; children: PropsWithChildren;
-}
 
-export default function Modal({ children, isVisible, onClose }: Props) {
+type ModalProps = PropsWithChildren<{
+  isVisible: boolean;
+  onClose: () => void;
+}>;
+
+export default function Modal({ children, isVisible, onClose }: ModalProps) {
   if (!isVisible) return null;
   return (
     <>
