@@ -4,7 +4,7 @@ import { productsData } from '../data/productsData'
 
 export default function ClothSlug() {
   const { slug } = useParams()
-  const Products = productsData.find(item => item.slug == slug)
+  const Products = productsData.find(item => item.slug === slug)
 
   return (
     <section className='p-4 flex justify-around items-center '>
