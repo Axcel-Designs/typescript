@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Loading from '../component/loading'
 import { NavLink } from 'react-router-dom'
 import type { BlogPost } from '../types/blogPosts'
+import Modal from '../component/Modal'
 
 export default function Blog() {
   const [posts, setPosts] = useState<BlogPost[]>([])
@@ -25,8 +26,6 @@ export default function Blog() {
   }
   useEffect(() => {
     getData();
-    // const intervalid = setInterval(getData, 5000)
-    // return () => clearInterval(intervalid)
   }, [])
 
   if (loading) return <><Loading /></>
@@ -51,8 +50,8 @@ export default function Blog() {
           ))
           }
         </ul>
-        hhh
       </main>
+      <Modal/>
     </>
   )
 }

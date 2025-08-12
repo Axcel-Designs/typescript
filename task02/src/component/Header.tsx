@@ -27,7 +27,7 @@ export default function Header() {
       <header className="flex items-center justify-between md:justify-around p-2 gap-4">
         <div className="flex items-center">
           <div className='rounded-full flex justify-around items-center text-center border-gray-400'>
-            <h3>Axcel Store</h3>
+            <h3>Axcel Blog</h3>
           </div>
         </div>
         <nav className='flex gap-4'>
