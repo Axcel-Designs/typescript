@@ -16,6 +16,7 @@ function App() {
     <>
       <Header />
       <Suspense fallback={<Loading />}>
+         <main className="min-h-125 p-4 ">
         <Routes>
           <Route index element={<Home />} />
           <Route path='blog' element={<Blog />} />
@@ -24,6 +25,7 @@ function App() {
           <Route path='about' element={<About />} />
           <Route path='work' element={<Work />} />
         </Routes>
+          </main>
       </Suspense>
       <Footer />
     </>

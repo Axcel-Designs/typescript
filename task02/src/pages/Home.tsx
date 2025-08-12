@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 export default function Home() {
   const navigate = useNavigate();
   return (
-    <main className="min-h-130 p-4">
+    <>
       <section className="">Home</section>
       <section className="flex flex-col justify-around items-center my-10 bg-blue-300 rounded-lg py-4 ">
         <div className="h-20 w-4/5 rounded"></div>
@@ -19,6 +19,6 @@ export default function Home() {
         </div>
 
       </section>
-    </main>
+    </>
   );
 }

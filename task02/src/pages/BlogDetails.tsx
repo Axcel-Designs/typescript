@@ -52,45 +52,43 @@ export default function BlogDetails() {
 
   return (
     <>
-      <main className="min-h-125">
-        <section className="my-4 p-4 flex flex-col ">
-          <div className="flex justify-between items-center mb-2">
-            <div>
-              <h2>Post</h2>
-            </div>
-            <NavLink to={"/blog"}>
-              <button className="border-2 py-1 px-4 hover:bg-gray-300">
-                Go Back
-              </button>
-            </NavLink>
+      <section className="my-4 p-4 flex flex-col ">
+        <div className="flex justify-between items-center mb-2">
+          <div>
+            <h2>Post</h2>
           </div>
-          <div className="flex flex-col flex-wrap gap-3 justify-around items-center ring ring-gray-400 shadow-xl w-fit place-self-center my-8 p-8 rounded-xl">
-            {data && (
-              <>
-                <li
-                  key={data.id}
-                  className="w-50 flex flex-col justify-around items-center"
-                >
-                  <li className="bg-gray-400 w-full">
-                    <img src={data.avatar} className="w-30 h-30 m-auto" />
-                  </li>
-                  <div className="m-4">
-                    <h4>{data.name}</h4>
-                    <p>{data.title}</p>
-                    <p>{data.createdAt}</p>
-                  </div>
+          <NavLink to={"/blog"}>
+            <button className="border-2 py-1 px-4 hover:bg-gray-300">
+              Go Back
+            </button>
+          </NavLink>
+        </div>
+        <div className="flex flex-col flex-wrap gap-3 justify-around items-center ring ring-gray-400 shadow-xl w-fit place-self-center my-8 p-8 rounded-xl">
+          {data && (
+            <>
+              <li
+                key={data.id}
+                className="w-50 flex flex-col justify-around items-center"
+              >
+                <li className="bg-gray-400 w-full">
+                  <img src={data.avatar} className="w-30 h-30 m-auto" />
                 </li>
-                <button
-                  onClick={onDelete}
-                  className="border-2 py-1 px-4 bg-red-600 text-white hover:border-black"
-                >
-                  Delete
-                </button>
-              </>
-            )}
-          </div>
-        </section>
-      </main>
+                <div className="m-4">
+                  <h4>{data.name}</h4>
+                  <p>{data.title}</p>
+                  <p>{data.createdAt}</p>
+                </div>
+              </li>
+              <button
+                onClick={onDelete}
+                className="border-2 py-1 px-4 bg-red-600 text-white hover:border-black"
+              >
+                Delete
+              </button>
+            </>
+          )}
+        </div>
+      </section>
     </>
   );
 }
