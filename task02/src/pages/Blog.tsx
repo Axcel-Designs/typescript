@@ -27,8 +27,8 @@ export default function Blog() {
     }
   }
   useEffect(() => {
-    getData();
-  }, [])
+    getData();    
+  }, [showModal, posts])
 
   if (loading) return <><Loading /></>
   if (err) return <p>{err}</p>
@@ -65,7 +65,7 @@ export default function Blog() {
         </ul>
       </main>
       <Modal isVisible={showModal} onClose={()=> setShowModal(false)} >
-        <AddPost/>
+        <AddPost onClose={() => setShowModal(false)} />
       </Modal>
     </>
   );

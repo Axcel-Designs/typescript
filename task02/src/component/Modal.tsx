@@ -9,7 +9,7 @@ export default function Modal({ children, isVisible, onClose }: ModalProps) {
   function closeModal(e: React.MouseEvent<HTMLElement>) {
     if ((e.target as HTMLElement).id === "modalSec") onClose();
   }
-  if (!isVisible) return null;
+  if (!isVisible) return;
   return (
     <>
       <section id="modalSec" className="fixed inset-0 flex flex-col justify-around items-center bg-black/60 backdrop-blur-sm" onClick={closeModal}>
