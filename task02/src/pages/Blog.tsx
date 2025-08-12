@@ -3,6 +3,7 @@ import Loading from '../component/loading'
 import { NavLink } from 'react-router-dom'
 import type { BlogPost } from '../types/blogPosts'
 import Modal from '../component/Modal'
+import AddPost from '../component/AddPost'
 
 export default function Blog() {
   const [posts, setPosts] = useState<BlogPost[]>([])
@@ -63,7 +64,9 @@ export default function Blog() {
           ))}
         </ul>
       </main>
-      <Modal isVisible={showModal} onClose={()=> setShowModal(false)} />
+      <Modal isVisible={showModal} onClose={()=> setShowModal(false)} >
+        <AddPost/>
+      </Modal>
     </>
   );
 }

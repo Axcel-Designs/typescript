@@ -5,6 +5,10 @@ type ModalProps = PropsWithChildren<{
   onClose: () => void;
 }>;
 
+function closeModal (){
+  if()
+}
+
 export default function Modal({ children, isVisible, onClose }: ModalProps) {
   if (!isVisible) return null;
   return (
@@ -18,7 +22,7 @@ export default function Modal({ children, isVisible, onClose }: ModalProps) {
             X
           </div>
           <div className="min-h-100 min-w-100 flex flex-col relative z-10 ">
-            <div className="">Modal{children}</div>
+            <div className="">{children}</div>
           </div>
         </div>
       </section>
