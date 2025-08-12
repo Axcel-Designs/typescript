@@ -2,6 +2,8 @@ import { useParams, NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import type { BlogPost } from "../types/blogPosts";
 import Loading from "../component/loading";
+import Modal from "../component/Modal";
+import EditPost from "../component/EditPost";
 
 export default function BlogDetails() {
   const navigate = useNavigate();
@@ -10,6 +12,8 @@ export default function BlogDetails() {
   const [data, setData] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [err, setErr] = useState<string>("");
+  const [showModal, setShowModal] = useState<boolean>(false);
+
 
   useEffect(() => {
     async function fetchData() {
@@ -79,12 +83,23 @@ export default function BlogDetails() {
                   <p>{data.createdAt}</p>
                 </div>
               </li>
-              <button
-                onClick={onDelete}
-                className="border-2 py-1 px-4 bg-red-600 text-white hover:border-black"
-              >
-                Delete
-              </button>
+              <div className="flex justify-between items-center w-full">
+                <button
+                  onClick={onDelete}
+                  className="border-2 py-1 px-4 bg-red-600 text-white hover:border-black"
+                >
+                  Delete
+                </button>
+                <button
+                  onClick={() => setShowModal(true)}
+                  className="border-2 py-1 px-4 bg-gray-600 text-white hover:border-black"
+                >
+                  Edit
+                </button>
+                <Modal isVisible={showModal} onClose={()=>setShowModal(false)}>
+                  <EditPost onClose={() => setShowModal(false)} />
+                </Modal>
+              </div>
             </>
           )}
         </div>
