@@ -8,6 +8,7 @@ export default function Blog() {
   const [posts, setPosts] = useState<BlogPost[]>([])
   const [loading, setLoading] = useState<boolean>(true)
   const [err, setErr] = useState<string | null>('')
+  const [showModal, setShowModal] = useState<boolean>(false)
 
   async function getData() {
     try {
@@ -33,25 +34,36 @@ export default function Blog() {
 
   return (
     <>
-      <main className='min-h-100 p-4 '>
-        <div className='flex items-center justify-between px-2 my-2'>
+      <main className="min-h-100 p-4 ">
+        <div className="flex items-center justify-between px-2 my-2">
           <h4>Posts No: {posts.length}</h4>
-          <div><button className='border-2 py-1 px-4'>Add Posts</button></div>
+          <div>
+            <button
+              onClick={() => setShowModal(true)}
+              className="border-2 py-1 px-4"
+            >
+              Add Posts
+            </button>
+          </div>
         </div>
-        <ul className='flex flex-wrap gap-3 justify-around items-center'>
+        <ul className="flex flex-wrap gap-3 justify-around items-center">
           {posts.map((item) => (
-            <li key={item.id} className='w-50 flex flex-col justify-around items-center'>
-              <NavLink to={`/blog/${item.id}`} className='bg-gray-400 w-full'><img src={item.avatar} className='w-30 h-30 m-auto' /></NavLink>
+            <li
+              key={item.id}
+              className="w-50 flex flex-col justify-around items-center"
+            >
+              <NavLink to={`/blog/${item.id}`} className="bg-gray-400 w-full">
+                <img src={item.avatar} className="w-30 h-30 m-auto" />
+              </NavLink>
               <div>
                 <h4>{item.name}</h4>
                 <p>{item.title}</p>
               </div>
             </li>
-          ))
-          }
+          ))}
         </ul>
       </main>
-      <Modal/>
+      <Modal isVisible={showModal} onClose={()=> setShowModal(false)} />
     </>
-  )
+  );
 }
