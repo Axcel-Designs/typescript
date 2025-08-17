@@ -4,7 +4,7 @@ export default function Footer() {
    <footer className='text-white bg-black p-2'>
     <section></section>
     <section className='text-center'>
-              <h5>&copy; copyright {new Date().getFullYear()}. All rights reversed</h5>
+              <h5>&copy; Axcel Designs {new Date().getFullYear()}. All rights reversed</h5>
     </section>
    </footer>
   )
