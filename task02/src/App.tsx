@@ -14,20 +14,22 @@ function App() {
 
   return (
     <>
-      <Header />
       <Suspense fallback={<Loading />}>
-         <main className="min-h-125 p-4 ">
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path='blog' element={<Blog />} />
-          <Route path='blog/:id' element={<BlogDetails />} />
-          <Route path='contact' element={<Contact />} />
-          <Route path='about' element={<About />} />
-          <Route path='work' element={<Work />} />
-        </Routes>
-          </main>
+        <main className="min-h-screen w-full bg flex flex-col justify-between ">
+          <Header />
+          <div className='grow'>
+            <Routes>
+              <Route index element={<Home />} />
+              <Route path='blog' element={<Blog />} />
+              <Route path='blog/:id' element={<BlogDetails />} />
+              <Route path='contact' element={<Contact />} />
+              <Route path='about' element={<About />} />
+              <Route path='work' element={<Work />} />
+            </Routes>
+          </div>
+          <Footer />
+        </main>
       </Suspense>
-      <Footer />
     </>
   )
 }
