@@ -7,10 +7,8 @@ interface navB {
 
 const navBar: navB[] = [
   { label: 'Home', path: '/', },
-  { label: 'About', path: 'about', },
-  { label: 'Our Work', path: 'work', },
   { label: 'Blog', path: 'blog', },
-  { label: 'Contact Us', path: 'contact', },
+  { label: 'About', path: 'about', },
 ]
 
 export default function Header() {
