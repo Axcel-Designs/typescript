@@ -1,8 +1,8 @@
 # TypeScript
 
-- [Tasks 01 URL](https://ashcommerce.vercel.app/)
-- [Tasks 02 URL](https://typescript-blond.vercel.app/)
-- [Final Tasks URL](https://ecommerce-project-green-seven.vercel.app/)
+- [Task 01 URL](https://ashcommerce.vercel.app/)
+- [Task 02 URL](https://typescript-blond.vercel.app/)
+- [Final Task URL](https://ecommerce-project-green-seven.vercel.app/)
 
 ## 💬 Feedback
 
